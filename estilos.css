@@ -1,0 +1,32 @@
+body{
+    background: url(gifisito.gif) center no-repeat fixed;
+    background-size: cover;
+    position: absolute;
+    padding: 100px 170px;
+}
+
+li {
+    color:blanchedalmond;
+    list-style: none;
+}
+
+li::before {
+    content: '+';
+    color: blanchedalmond;
+}
+
+a{
+    color:blanchedalmond;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(255, 154, 1)
+}
+
+.audio{
+    position: absolute;
+    top: 85vh;
+    left: 50vw;
+    transform: translate(-50%, 50%);
+}
