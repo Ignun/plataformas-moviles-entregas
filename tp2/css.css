@@ -1,0 +1,45 @@
+body{
+    color:#ee6;
+    background-color:#222;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    font-family: sans-serif;
+}
+
+h1, h2, h3{
+    color:#eee;
+}
+
+strong{
+    border-bottom: 1px solid #fff;
+}
+
+.the-force{
+    background-color: #444;
+    font-weight: 900;
+}
+
+.light-side{
+    color: #66f;
+}
+
+.dark-side{
+    color: #f33;
+}
+
+#og-trilogy{
+    list-style-type: circle;
+}
+
+.movies-list:nth-of-type(2){
+    padding-left: 100px;
+}
+
+.movies-list:nth-of-type(3) li:nth-of-type(3){
+    margin-top: 100px;
+}

@@ -2,11 +2,14 @@ body{
     background: url(imagenes/gifisito.gif) center no-repeat fixed;
     background-size: cover;
     position: absolute;
+}
+
+ul{
     padding: 100px 170px;
+    color:blanchedalmond;
 }
 
 li {
-    color:blanchedalmond;
     list-style: none;
 }
 
