@@ -1,0 +1,24 @@
+@media (orientation: portrait) {
+    body{
+        background: url(../imagenes/fondo-mobile.gif) center no-repeat fixed;
+        background-size: cover;
+        position: absolute;
+    }    
+    ul {
+        margin: 10px 10px;
+    }
+    li::before {
+        content: url(../imagenes/fire2.gif) 10px;
+    }
+    a:hover{
+        color: rgb(255, 154, 1)
+    }
+}
+
+@media (orientation: landscape) {
+    body{
+        background: url(../imagenes/gifisito.gif) center no-repeat fixed;
+        background-size: cover;
+        position: absolute;
+    }    
+}
