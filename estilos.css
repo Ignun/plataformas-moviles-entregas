@@ -1,35 +1,42 @@
-body{
-    background: url(imagenes/gifisito.gif) center no-repeat fixed;
-    background-size: cover;
-    position: absolute;
+@media (orientation: portrait) {
+    body{
+        background: url(../imagenes/fondo-mobile.gif) center no-repeat fixed;
+        background-size: cover;
+        position: absolute;
+    }    
+    ul {
+        margin: 10px 10px;
+    }
+    a:hover{
+        color: rgb(255, 154, 1)
+    }
+    li {
+        list-style: none;
+    }
 }
 
-ul{
-    margin: 100px 170px;
-    color:blanchedalmond;
-}
-
-li {
-    list-style: none;
-}
-
-li::before {
-    content: '+';
-    color: blanchedalmond;
-}
-
-a{
-    color:blanchedalmond;
-    text-decoration: none;
-}
-
-a:hover{
-    color: rgb(255, 154, 1)
-}
-
-.audio{
-    position: absolute;
-    top: 85vh;
-    left: 50vw;
-    transform: translate(-50%, 50%);
+@media (orientation: landscape) {
+    body{
+        background: url(../imagenes/fondo-rest.gif) center no-repeat fixed;
+        background-size: cover;
+        position: absolute;
+    }
+    a {
+        color:rgb(255, 154, 1);
+    }
+    a:hover {
+        color:rgb(255, 154, 1);
+    }
+    li {
+        list-style: none;
+        margin: 32px
+    }
+    li:hover::before{
+        content: '';
+        width: 32px;
+        height: 32px;
+        background-image: url(../imagenes/fire.gif);
+        display: inline-block;
+        background-size: 32px;
+    }
 }
