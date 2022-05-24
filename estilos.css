@@ -1,6 +1,6 @@
 @media (orientation: portrait) {
     body{
-        background: url(../imagenes/fondo-mobile.gif) center no-repeat fixed;
+        background: url(imagenes/fondo-mobile.gif) center no-repeat fixed;
         background-size: cover;
         position: absolute;
     }    
@@ -17,7 +17,7 @@
 
 @media (orientation: landscape) {
     body{
-        background: url(../imagenes/fondo-rest.gif) center no-repeat fixed;
+        background: url(imagenes/fondo-rest.gif) center no-repeat fixed;
         background-size: cover;
         position: absolute;
     }
@@ -35,7 +35,7 @@
         content: '';
         width: 32px;
         height: 32px;
-        background-image: url(../imagenes/fire.gif);
+        background-image: url(imagenes/fire.gif);
         display: inline-block;
         background-size: 32px;
     }
