@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke-api</title>
+</head>
+<body>
+    <script>
+        var linkapi = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=151"
+        var list = document.createElement("ul")
+        document.body.appendChild(list)
+
+        const pokedata = (link) => {
+            fetch(link).then(response => response.json()).then(data => {
+                var modal = document.createElement("div")
+                modal.classList.add("fixed", "top-0", "left-0", "bg-white/60", "h-screen", "w-screen", "grid", "items-center", "justify-center")
+                document.body.appendChild(modal)
+                
+                var container = document.createElement("div")
+                container.classList.add("bg-orange-500", "flex", "flex-col", "h-auto", "w-auto", "p-4", "gap-2")
+                container.innerHTML = data.name + " N°" + data.id
+                modal.appendChild(container)
+                
+                var image = document.createElement("img")
+                image.src = data.sprites.front_default
+                image.classList.add("h-64", "w-64", "border-2", "border-orange-800")
+                container.appendChild(image)
+                
+                var stats = document.createElement("div")
+                container.appendChild(stats)
+
+                for(let a=0; a < 6; a++){
+                    var line = document.createElement("li")
+                    stats.appendChild(line)
+                    line.innerHTML = data.stats[a].stat.name + ": " + data.stats[a].base_stat
+                }
+
+                var close = document.createElement("button")
+                var imagencls = document.createElement("img")
+                close.classList.add("w-10", "absolute", "top-5", "right-5")
+                imagencls.src = "../imagenes/close.png"
+                close.appendChild(imagencls)
+                close.onclick = function(){modal.remove()}
+                modal.appendChild(close)
+            })
+        }
+
+        fetch(linkapi).then(response => response.json()).then(data => {
+            console.log(data)
+            for(let i=0; i < 151; i++){
+                var line = document.createElement("li")
+                line.classList.add("flex", "flex-row", "gap-2", "pl-2", "pt-2")
+                list.appendChild(line)
+                line.innerHTML = data.results[i].name
+                button = document.createElement("button")
+                button.innerHTML = "Info"
+                button.classList.add("px-2", "border-2", "border-green-600")
+                button.onclick = function(){pokedata(data.results[i].url)}
+                line.appendChild(button)
+            }
+        });
+    </script>
+</body>
+</html>
