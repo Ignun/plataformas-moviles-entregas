@@ -21,14 +21,24 @@
                 
                 var container = document.createElement("div")
                 container.classList.add("bg-orange-500", "flex", "flex-col", "h-auto", "w-auto", "p-4", "gap-2")
-                container.innerHTML = data.name + " N°" + data.id
+                container.innerHTML = data.name + " N°" + data.id + ""
                 modal.appendChild(container)
+                
+                var types = document.createElement("div")
+                types.innerHTML = "Types: "
+                container.appendChild(types)
+
+                for(let b=0; b < data.types.length; b++){
+                    var type = document.createElement("li")
+                    types.appendChild(type)
+                    type.innerHTML = data.types[b].type.name
+                }
                 
                 var image = document.createElement("img")
                 image.src = data.sprites.front_default
                 image.classList.add("h-64", "w-64", "border-2", "border-orange-800")
                 container.appendChild(image)
-                
+
                 var stats = document.createElement("div")
                 container.appendChild(stats)
 
